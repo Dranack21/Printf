@@ -6,13 +6,13 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:21:00 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/04 14:43:05 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 15:07:54 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pointer(void *ptr)
+void ft_pointer(void *ptr)
 {
 	ft_hexa_lower((size_t)ptr);
 }

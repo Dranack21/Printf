@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:41:36 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/04 14:51:28 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:58:57 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	get_size(int n)
 }
 
 
-void	ft_hexa_upper(int n)
+int	ft_hexa_upper(int n)
 {
 	char	*charset;
 	char	*stash;
@@ -70,9 +70,10 @@ void	ft_hexa_upper(int n)
 	ft_putstr(stash);
 	free (stash);
 	stash = NULL;
+	return (i);
 }
 
-void	ft_hexa_lower(int n)
+int	ft_hexa_lower(int n)
 {
 	char	*charset;
 	char	*stash;
@@ -94,6 +95,7 @@ void	ft_hexa_lower(int n)
 	ft_putstr(stash);
 	free (stash);
 	stash = NULL;
+	return (i);
 }
 
 

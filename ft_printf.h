@@ -5,12 +5,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void	ft_pointer(void *ptr);
-void	ft_hexa_upper(int n);
+void ft_pointer(void *ptr);
+int	ft_hexa_upper(int n);
 void	ft_putchar(char c);
-void	ft_putnbr(int n);
-void	ft_putstr(char *str);
-void	ft_hexa_lower(int n);
+int	ft_putnbr(int n);
+int	ft_putstr(char *str);
+int	ft_hexa_lower(int n);
 
 int		ft_printf(const char* str, ...);
 

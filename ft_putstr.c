@@ -6,13 +6,13 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:02:33 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/03 15:03:19 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 15:00:42 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int i;
 
@@ -22,4 +22,5 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
+	return (i);
 }
