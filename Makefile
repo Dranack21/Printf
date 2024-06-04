@@ -6,7 +6,7 @@
 #    By: habouda <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/31 12:40:07 by habouda           #+#    #+#              #
-#    Updated: 2024/06/04 14:48:09 by habouda          ###   ########.fr        #
+#    Updated: 2024/06/04 23:37:53 by habouda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 
-re: 
-	fclean all
+re : fclean all
+	
 
 .PHONY : re fclean all make

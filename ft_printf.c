@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/04 23:35:31 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 23:44:13 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,10 @@ int	ft_printf(const char* str, ...)
 	va_end(args);
 	return (k);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
-	ft_printf("%s %d" ,"efgh", 56);
-}
+	ft_printf("%s %x \n" ,"efgh", 56);
+	printf("%s %x \n" ,"efgh", 56);
+}*/
