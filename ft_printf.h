@@ -5,6 +5,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+void	ft_pointer(void *ptr);
 void	ft_hexa_upper(int n);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);

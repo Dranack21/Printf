@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexa_upper.c                                    :+:      :+:    :+:   */
+/*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:41:36 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/04 14:02:02 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:51:28 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,20 @@ void	ft_hexa_upper(int n)
 
 	i = 0;
 	charset = "0123456789ABCDEF";
-	stash = malloc(get_size(n) + 1 * sizeof(char));
+	stash = malloc(get_size(n) + 3 * sizeof(char));
 	while (n)
 	{
 		stash[i] = (charset[n % 16]);
 		n = n / 16;
 		i++;
 	}
-	stash[i] = '\0';
+	stash[i] = 'x';
+	stash[i + 1] = '0';
+	stash[i + 2] = '\0';
 	reverseString(stash);
 	ft_putstr(stash);
+	free (stash);
+	stash = NULL;
 }
 
 void	ft_hexa_lower(int n)
@@ -76,16 +80,20 @@ void	ft_hexa_lower(int n)
 
 	i = 0;
 	charset = "0123456789abcdef";
-	stash = malloc(get_size(n) + 1 * sizeof(char));
+	stash = malloc(get_size(n) + 3 * sizeof(char));
 	while (n)
 	{
 		stash[i] = (charset[n % 16]);
 		n = n / 16;
 		i++;
 	}
-	stash[i] = '\0';
+	stash[i] = 'x';
+	stash[i + 1] = '0';
+	stash[i + 2] = '\0';
 	reverseString(stash);
 	ft_putstr(stash);
+	free (stash);
+	stash = NULL;
 }
 
 
