@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:41:36 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/04 14:58:57 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 23:09:04 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ void reverseString(char* str)
 
 int	get_size(int n)
 {
-	int i;
 	int	k;
 
-	i = 0;
 	k = 0;
 	while (n > 0)
 	{

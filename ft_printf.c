@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/04 15:22:46 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/04 23:35:31 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	check_after(const char *str, va_list args)
 		ft_putchar(va_arg(args, int));
 		i++;
 	}
-	if (str[1] == 'x')
+	if (str[i] && (str[1] == 'x'))
 		i = i + ft_hexa_lower(va_arg(args, int));
-	if (str[1] == 'X')
+	if (str[i] && (str[1] == 'X'))
 		i = i + ft_hexa_upper(va_arg(args, int));
-	if (str[1] == 'd' || str[0] == 'i' || str[0] == 'u')
+	if ((str[i] && str[1] == 'd') || str[0] == 'i' || str[0] == 'u')
 		i = i + ft_putnbr(va_arg(args, int));
-	if (str[1] == 's')
+	if (str[i] && str[1] == 's')
 		i = i + ft_putstr(va_arg(args, char *));
-	if (str[1] == '%')
+	if (str[i] && str[1] == '%')
 	{
 		i++;
 		ft_putchar('%');
@@ -48,14 +48,15 @@ int	ft_printf(const char* str, ...)
 
 	i = 0;
 	va_start(args, str);
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if (str[i] == '%')
+		if (str[i] != '\0' && str[i] == '%')
 		{
 			k = check_after(&str[i], args);
-			i = i + 2;
+			i++;
 		}
-		ft_putchar(str[i]);
+		else
+			ft_putchar(str[i]);
 		i++;
 	}
 	va_end(args);
@@ -65,5 +66,5 @@ int	ft_printf(const char* str, ...)
 
 int	main()
 {
-	ft_printf("%s", "abc");
+	ft_printf("%s %d" ,"efgh", 56);
 }
