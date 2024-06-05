@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/05 00:46:34 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/05 14:20:33 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,14 @@ int	ft_printf(const char* str, ...)
 	va_end(args);
 	return (wrote);
 }
-#include <stdio.h>
+
+/*include <stdio.h>
 
 
-int main() {
-    int number = 6719;
+int main()
+{
 
-    // Using the standard printf
-    printf("Standard printf with %%x: %x\n", number);
-
-    // Using the custom ft_printf
-    ft_printf("Custom ft_printf with %%x: %x\n", number);
-
-    // Testing with another value
-    number = 65518;
-    printf("Standard printf with %%x: %x\n", number);
-    ft_printf("Custom ft_printf with %%x: %x\n", number);
+	printf("%d", ft_printf("%X", 75));
 
     return 0;
-}
+}*/

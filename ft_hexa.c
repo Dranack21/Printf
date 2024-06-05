@@ -6,45 +6,11 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:41:36 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/05 00:46:48 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/05 14:20:16 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void reverseString(char* str) 
-{
-    int		len;
- 	char*	start;
-	char*	end;
-	
-	len = ft_strlen(str);
-    start= str;
-    end = str + len - 1;
-    while (start < end) 
-	{
-        char temp = *start;
-        *start = *end;
-        *end = temp;
-        start++;
-        end--;
-    }
-}
-
-
-int	get_size(int n)
-{
-	int	k;
-
-	k = 0;
-	while (n > 0)
-	{
-		n = n / 10;
-		k++;
-	}
-	return (k);
-}
-
 
 int	ft_hexa_upper(int n)
 {
@@ -52,23 +18,19 @@ int	ft_hexa_upper(int n)
 	char	*stash;
 	int		i;
 
-	i = 0;
+	i = 8;
 	charset = "0123456789ABCDEF";
-	stash = malloc(get_size(n) + 3 * sizeof(char));
+	stash = malloc(9 * sizeof(char));	
+	stash[8] = '\0';
 	while (n)
 	{
-		stash[i] = (charset[n % 16]);
+		stash[--i] = (charset[n % 16]);
 		n = n / 16;
-		i++;
 	}
-	stash[i] = 'x';
-	stash[i + 1] = '0';
-	stash[i + 2] = '\0';
-	reverseString(stash);
-	ft_putstr(stash);
+	ft_putstr(stash + i);
 	free (stash);
 	stash = NULL;
-	return (i);
+	return (8 - i);
 }
 
 int	ft_hexa_lower(int n)
@@ -77,23 +39,18 @@ int	ft_hexa_lower(int n)
 	char	*stash;
 	int		i;
 
-	i = 0;
+	i = 8;
 	charset = "0123456789abcdef";
-	stash = malloc(get_size(n) + 3 * sizeof(char));
+	stash = malloc(9 * sizeof(char));	
+	stash[8] = '\0';
 	while (n)
 	{
-		stash[i] = (charset[n % 16]);
+		stash[--i] = (charset[n % 16]);
 		n = n / 16;
-		i++;
 	}
-	stash[i] = 'x';
-	stash[i + 1] = '0';
-	stash[i + 2] = '\0';
-	reverseString(stash);
-	ft_putstr(stash);
+	ft_putstr(stash + i);
 	free (stash);
 	stash = NULL;
-	return (i);
+	return (8 - i);
 }
-
 
