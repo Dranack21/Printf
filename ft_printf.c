@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/05 14:20:33 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/05 15:09:02 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_after(const char *str, va_list args)
 	if (str[1] && (str[1] == 'x'))
 		i = i + ft_hexa_lower(va_arg(args, int));
 	if (str[1] && (str[1] == 'X'))
-		i = i + ft_hexa_upper(va_arg(args, int));
+		i = i + ft_hexa_upper(va_arg(args, long));
 	if ((str[1] && str[1] == 'd') || str[1] == 'i' || str[1] == 'u')
 		i = i + ft_putnbr(va_arg(args, int));
 	if (str[1] && str[1] == 's')
@@ -69,13 +69,11 @@ int	ft_printf(const char* str, ...)
 	return (wrote);
 }
 
-/*include <stdio.h>
+#include <stdio.h>
 
 
 int main()
 {
-
-	printf("%d", ft_printf("%X", 75));
-
+	ft_printf(" %x", -1);
     return 0;
-}*/
+}
