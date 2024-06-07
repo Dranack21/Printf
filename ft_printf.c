@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 17:50:23 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/07 17:52:27 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,20 @@ int	check_after(const char *str, va_list args)
 	}
 	if (str[1] && (str[1] == 'x'))
 		i = i + ft_hexa_lower(va_arg(args, int));
-	if (str[1] && (str[1] == 'X'))
+	else if (str[1] && (str[1] == 'X'))
 		i = i + ft_hexa_upper(va_arg(args, long));
-	if (str[1] && (str[1] == 'd' || str[1] == 'i'))
+	else if (str[1] && (str[1] == 'd' || str[1] == 'i'))
 		i = i + ft_putnbr(va_arg(args, int));
-	if (str[1] == 'u')
+	else if (str[1] == 'u')
 		i = i + ft_putunbr(va_arg(args, int));
-	if (str[1] && str[1] == 's')
+	else if (str[1] && str[1] == 's')
 		i = i + ft_putstr(va_arg(args, char *));
-	if (str[1] && str[1] == '%')
+	else if (str[1] && str[1] == '%')
 		i = i + ft_putchar('%');
-	if (str[1] == 'p')
+	else if (str[1] == 'p')
 		i = i + ft_pointer(va_arg(args, void *));
+	else
+		return (0);
 	return (i);
 }
 
