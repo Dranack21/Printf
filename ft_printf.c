@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 17:42:24 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/07 17:50:23 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ int	check_after(const char *str, va_list args)
 		i = i + ft_putchar('%');
 	if (str[1] == 'p')
 		i = i + ft_pointer(va_arg(args, void *));
-	
-		return (0);
 	return (i);
 }
 

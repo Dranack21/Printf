@@ -6,13 +6,13 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:41:36 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 13:14:42 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/07 17:28:33 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexa_upper(int num)
+int	ft_hexa_upper(size_t num)
 {
 	char			*charset;
 	char			*stash;
@@ -35,7 +35,7 @@ int	ft_hexa_upper(int num)
 	return (free (stash), 8 - i);
 }
 
-int	ft_hexa_lower(int num)
+int	ft_hexa_lower(size_t num)
 {
 	char			*charset;
 	char			*stash;
