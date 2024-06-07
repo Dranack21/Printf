@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/05 15:09:02 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/07 13:10:15 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,12 @@ int	ft_printf(const char* str, ...)
 	return (wrote);
 }
 
-#include <stdio.h>
-
+/*#include <stdio.h> 	
 
 int main()
 {
-	ft_printf(" %x", -1);
+	printf(" %x", -50);
+	printf("\n");
+	ft_printf(" %x", -50);
     return 0;
-}
+}*/
