@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 13:10:15 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/07 17:42:24 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,27 @@ int	check_after(const char *str, va_list args)
 	int	i;
 
 	i = 0;
-	if (str[1]== 'c')
+	if (str[1] && str[1] == 'c')
 	{
 		ft_putchar(va_arg(args, int));
-		i++;
+		return (1);
 	}
 	if (str[1] && (str[1] == 'x'))
 		i = i + ft_hexa_lower(va_arg(args, int));
 	if (str[1] && (str[1] == 'X'))
 		i = i + ft_hexa_upper(va_arg(args, long));
-	if ((str[1] && str[1] == 'd') || str[1] == 'i' || str[1] == 'u')
+	if (str[1] && (str[1] == 'd' || str[1] == 'i'))
 		i = i + ft_putnbr(va_arg(args, int));
+	if (str[1] == 'u')
+		i = i + ft_putunbr(va_arg(args, int));
 	if (str[1] && str[1] == 's')
 		i = i + ft_putstr(va_arg(args, char *));
 	if (str[1] && str[1] == '%')
-	{
-		i++;
-		ft_putchar('%');
-	}
+		i = i + ft_putchar('%');
 	if (str[1] == 'p')
-		ft_pointer(va_arg(args, void *));
+		i = i + ft_pointer(va_arg(args, void *));
+	
+		return (0);
 	return (i);
 }
 
@@ -69,12 +70,16 @@ int	ft_printf(const char* str, ...)
 	return (wrote);
 }
 
-/*#include <stdio.h> 	
+#include <stdio.h> 	
 
-int main()
+int	main()
 {
-	printf(" %x", -50);
-	printf("\n");
-	ft_printf(" %x", -50);
-    return 0;
-}*/
+	int	*p;
+	int	 i;
+
+	i = 5;
+	p = &i;
+	printf("%d", ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+    printf("\n");
+    printf("%d", printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+}
