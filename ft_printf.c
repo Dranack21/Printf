@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/10 21:09:55 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/10 21:12:01 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,4 @@ int	main()
 	printf("%d", ft_printf("%d", -9204));
 	printf("\n");
 	printf("%d", printf("%d", -9204));
-	printf("\n");
-	printf("%d", ft_printf(" %d %d %d %d %d %d %d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 }*/
