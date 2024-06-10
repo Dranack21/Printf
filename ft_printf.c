@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 17:52:27 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/10 21:09:55 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@ int	check_after(const char *str, va_list args)
 
 	i = 0;
 	if (str[1] && str[1] == 'c')
-	{
-		ft_putchar(va_arg(args, int));
-		return (1);
-	}
-	if (str[1] && (str[1] == 'x'))
+		i = i + ft_putchar(va_arg(args, int));
+	else if (str[1] && (str[1] == 'x'))
 		i = i + ft_hexa_lower(va_arg(args, int));
 	else if (str[1] && (str[1] == 'X'))
 		i = i + ft_hexa_upper(va_arg(args, long));
@@ -36,27 +33,23 @@ int	check_after(const char *str, va_list args)
 		i = i + ft_putchar('%');
 	else if (str[1] == 'p')
 		i = i + ft_pointer(va_arg(args, void *));
-	else
-		return (0);
 	return (i);
 }
 
-int	ft_printf(const char* str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
+	va_list	args;
 	int		i;
-	int		length;
-	int 	wrote;
+	int		wrote;
 
 	i = 0;
 	wrote = 0;
 	va_start(args, str);
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			length = check_after(&str[i], args);
-			wrote = wrote + length;
+			wrote = wrote + check_after(&str[i], args);
 			i++;
 		}
 		else
@@ -70,16 +63,13 @@ int	ft_printf(const char* str, ...)
 	return (wrote);
 }
 
-#include <stdio.h> 	
+/*#include <stdio.h>
 
 int	main()
 {
-	int	*p;
-	int	 i;
-
-	i = 5;
-	p = &i;
-	printf("%d", ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
-    printf("\n");
-    printf("%d", printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
-}
+	printf("%d", ft_printf("%d", -9204));
+	printf("\n");
+	printf("%d", printf("%d", -9204));
+	printf("\n");
+	printf("%d", ft_printf(" %d %d %d %d %d %d %d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+}*/

@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 10:57:22 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 17:11:28 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/10 21:01:50 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_putnbr(int n)
 {
-	static int i;
-	static int k;
+	int	i;
 
 	i = 0;
 	if (n == -2147483648)
@@ -25,18 +24,15 @@ int	ft_putnbr(int n)
 		if (n < 0)
 		{
 			write(1, "-", 1);
-			k = 1;
+			i = 1;
 			n = -n;
 		}
 		while (n >= 10)
 		{
-			ft_putnbr(n / 10);
+			i = i + ft_putnbr(n / 10);
 			n = n % 10;
 		}
-		ft_putchar(n + 48);
-		i++;
+		i = i + ft_putchar(n + 48);
 	}
-	if (k == 1)
-		return(i + 1);
 	return (i);
 }

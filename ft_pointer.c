@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:21:00 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/07 16:56:37 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/10 21:03:37 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_chungli(size_t num)
 	return (free (stash), 16 - i);
 }
 
-int ft_pointer(void *ptr)
+int	ft_pointer(void *ptr)
 {
 	int	i;
 
