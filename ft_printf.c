@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:38:43 by habouda           #+#    #+#             */
-/*   Updated: 2024/06/10 21:12:01 by habouda          ###   ########.fr       */
+/*   Updated: 2024/06/18 02:06:21 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	wrote = 0;
 	va_start(args, str);
-	while (str[i])
+	while (str && str[i])
 	{
 		if (str[i] == '%')
 		{
